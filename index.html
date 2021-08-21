@@ -64,6 +64,103 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2021_08_20_git的冲突" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/08/21/2021_08_20_git%E7%9A%84%E5%86%B2%E7%AA%81/" class="article-date">
+  <time datetime="2021-08-21T00:13:51.738Z" itemprop="datePublished">2021-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git的冲突以及解决办法"><a href="#Git的冲突以及解决办法" class="headerlink" title="Git的冲突以及解决办法"></a>Git的冲突以及解决办法</h1><p>1.A写了js代码并提交了上去</p>
+<p>2.B也写了js代码也提交了上去</p>
+<p>3.这个时候就会出现下面的冲突问题</p>
+<p><img src="https://i.loli.net/2021/08/21/vSGiP8Qe2WqmkZO.png" alt="image-20210821081743289"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><img src="https://i.loli.net/2021/08/21/mcClu4wipnOHZEk.png" alt="image-20210821082032985"></p>
+<p>当B修改完冲突</p>
+<ol>
+<li><p>B: git add .</p>
+</li>
+<li><p>B: git commit -m ‘修改冲突’ </p>
+</li>
+<li><p>B: git push origin dev</p>
+</li>
+<li><p>A : 在A分⽀ git pull origin dev</p>
+</li>
+<li><p>B : 在B分⽀ git pull origin dev</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/21/2021_08_20_git%E7%9A%84%E5%86%B2%E7%AA%81/" data-id="cksl1ehy80000xsug2ztfhtzx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2021_08_19_git的操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/08/19/2021_08_19_git%E7%9A%84%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2021-08-19T06:05:32.584Z" itemprop="datePublished">2021-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git的操作"><a href="#git的操作" class="headerlink" title="git的操作"></a>git的操作</h1><h2 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h2><blockquote>
+<p>基于命令</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 基于个人</span><br><span class="line">git clone 地址：克隆一个仓库地址</span><br><span class="line">git init : git初始化 生成.git文件</span><br><span class="line">git add 文件名 或者 git add . :将文件或者所有文件提交到缓存，没有提交记录</span><br><span class="line">git commit -m &#x27;描述信息&#x27; ：提交到本地</span><br><span class="line">git log ：提交日志</span><br><span class="line">git status ：查看git状态</span><br><span class="line">git remote add origin 地址 ：关联远程地址</span><br><span class="line">git remote -V ：查看有没有关联远程地址</span><br><span class="line">git push origin 分支 ：推送到远程</span><br><span class="line">git pull ：从远程拉取</span><br><span class="line">git pull origin 分支名字</span><br><span class="line"># 团队协作</span><br><span class="line">命令 ：以姓名命名 ：</span><br><span class="line">默认分支（主分支）：master</span><br><span class="line">合并 ：dev分支</span><br><span class="line">git branch 分支名 </span><br><span class="line">git checkout -b 分支名 ：创建分支</span><br><span class="line">git merge 分支名 ： 合并分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="协作"><a href="#协作" class="headerlink" title="协作"></a>协作</h3><p>1、创建一个仓库（只创建一个）</p>
+<p>2、clone（一个人），写一些代码并提交</p>
+<p>3、其余成员clone远程代码</p>
+<p>4、编写自己的代码</p>
+<p>5、每个人创建自己的个人分支和dev分支</p>
+<p>6、将自己的代码提交到自己的分支中</p>
+<p>7、其余成员pull</p>
+<p>8、在本地创建与远程对应的分支</p>
+<p><img src="https://i.loli.net/2021/08/19/dVyen71fTtkH5ah.png" alt="image-20210819185410208"></p>
+<ol start="9">
+<li><p>B 也要写代码 要切换到B的分⽀⾥⾯写</p>
+</li>
+<li><p>提交到远程</p>
+</li>
+</ol>
+<p>11.A 拉取</p>
+<ol start="12">
+<li><p>A 要在本地新建 B的分⽀</p>
+</li>
+<li><p>A 切换到B的分⽀ git pull origin B</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/19/2021_08_19_git%E7%9A%84%E6%93%8D%E4%BD%9C/" data-id="cksisvfys00006cuga38nbdo1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2020_08_19_git教程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/08/19/2020_08_19_git%E6%95%99%E7%A8%8B/" class="article-date">
@@ -292,6 +389,14 @@
       <ul>
         
           <li>
+            <a href="/2021/08/21/2021_08_20_git%E7%9A%84%E5%86%B2%E7%AA%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/19/2021_08_19_git%E7%9A%84%E6%93%8D%E4%BD%9C/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/19/2020_08_19_git%E6%95%99%E7%A8%8B/">(no title)</a>
           </li>
         
@@ -301,10 +406,6 @@
         
           <li>
             <a href="/2021/08/19/2021_08_19_%E4%B8%80%E9%94%AE%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/18/2021_08_18/">(no title)</a>
           </li>
         
       </ul>
